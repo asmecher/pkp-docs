@@ -24,6 +24,7 @@
   * File
   * Hooks
   * Notifications
+  * [Testing](./utilities-testing)
   * Translation
   * Updates
   * [Validation](./utilities-validation)
