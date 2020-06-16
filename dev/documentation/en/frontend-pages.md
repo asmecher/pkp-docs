@@ -152,17 +152,19 @@ Use the `date_format` modifier to transform a date into the configured format.
 
 ## Security and Sanitization
 
-Any information that comes from a user must be sanitized to prevent malicious attacks. Use the `escape` modifier to sanitize values such as titles and names.
+Any information that comes from a user must be escaped to prevent malicious attacks (and properly present special characters like `<`, `>`, and `&`). Use the [`escape` modifier](https://www.smarty.net/docs/en/language.modifier.escape.tpl) to escape values such as titles and names that are not expected to include HTML content.
 
 ```html
 <p>{$title|escape}</p>
 ```
 
-Information that includes HTML should use the `strip_unsafe_html` modifier. This will sanitize the value but preserve the HTML tags.
+Information that includes HTML supplied by untrusted users should use the `strip_unsafe_html` modifier. This will sanitize the value but preserve an allowed set of HTML tags.
 
 ```html
 {$abstract|strip_unsafe_html}
 ```
+
+Only information that is entered by a trusted user (e.g. a Journal Manager in the OJS setup forms), either via a rich text editor (TinyMCE) or in a context where raw HTML is expected (e.g. a field for additional header tags), should be presented in a template without escaping or filtering.
 
 ## Page Title
 
