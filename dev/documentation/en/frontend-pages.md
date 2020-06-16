@@ -4,7 +4,7 @@ title: Pages - Frontend - Technical Documentation - OJS/OMP
 
 # Pages
 
-Every request to a [PageHandler](./architecture-handlers#page-handlers) returns the HTML code for a complete webpage. The `TemplateManager` is used to load and render a template.
+Every request to a [PageHandler](./architecture-handlers#page-handlers) returns the HTML code for a complete webpage. The `TemplateManager` (based on [Smarty](https://www.smarty.net/docs/en/api.functions.tpl)) is used to load and render a template.
 
 ```php
 class SettingsHandler extends Handler {
