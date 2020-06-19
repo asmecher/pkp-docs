@@ -83,7 +83,7 @@ Forms will be created by a `PageHandler` and passed to the `TemplateManager` as 
 ```php
 // The URL where the form will be submitted
 $apiUrl = $request
-	->getDispacheter()
+	->getDispatcher()
 	->url(
 		$request,
 		ROUTE_API,
